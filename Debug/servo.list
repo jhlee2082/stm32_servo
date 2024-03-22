@@ -2793,7 +2793,9 @@ HAL_StatusTypeDef HAL_ADC_PollForConversion(ADC_HandleTypeDef *hadc, uint32_t Ti
  800117a:	429a      	cmp	r2, r3
  800117c:	d212      	bcs.n	80011a4 <HAL_ADC_PollForConversion+0x92>
       {
-        /* New check to avoid false timeout detection in case of preemption */
+        /* New check to avoid false timeout detection in case of preemption
+         *
+         * */
         if (!(__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC)))
  800117e:	687b      	ldr	r3, [r7, #4]
  8001180:	681b      	ldr	r3, [r3, #0]

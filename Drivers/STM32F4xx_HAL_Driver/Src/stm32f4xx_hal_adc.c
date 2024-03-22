@@ -912,7 +912,9 @@ HAL_StatusTypeDef HAL_ADC_PollForConversion(ADC_HandleTypeDef *hadc, uint32_t Ti
     {
       if ((Timeout == 0U) || ((HAL_GetTick() - tickstart) > Timeout))
       {
-        /* New check to avoid false timeout detection in case of preemption */
+        /* New check to avoid false timeout detection in case of preemption
+         *
+         * */
         if (!(__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC)))
         {
           /* Update ADC state machine to timeout */
